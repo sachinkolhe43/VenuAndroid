@@ -18,7 +18,7 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="337dp"
-            android:layout_height="200dp"
+            android:layout_height="171dp"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
@@ -59,12 +59,12 @@
     </LinearLayout>
 
     <TextView
-        android:gravity="center"
-        android:background="@color/material_dynamic_primary60"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/services"
-        android:layout_marginTop="-39dp"
+        android:layout_marginTop="-50dp"
+        android:background="@color/material_dynamic_primary60"
+        android:gravity="center"
         android:text="Add Services"
         android:textSize="30dp" />
 
@@ -73,7 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/venuDescription"
-        android:layout_marginBottom="-318dp"
+        android:layout_marginBottom="-336dp"
         android:orientation="vertical">
 
         <CheckBox
@@ -105,6 +105,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Photography" />
+
+        <TextView
+            android:id="@+id/textTotalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkBoxPhotography"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Total: Rs.0.00"
+            android:textSize="18sp" />
 
     </LinearLayout>
 

@@ -26,11 +26,12 @@ public interface API {
     @GET("/user/{id}")
     Call<JsonObject> getUserById(@Path("id")int id);
 
-    @GET("/service/{id}/service-prices")
-    Call<List<String>> getVenueServices(@Path("venueId") int venueId);
+    @GET("/service/{venueId}/service-prices")
+    Call<JsonObject> getVenueServices(@Path("venueId") int venueId);
 
 
-                // Handle failure
+
+    // Handle failure
 
 //    @GET("/user/{id}")
 //    Call<JsonObject> getUserById(@Path("id")int id);
