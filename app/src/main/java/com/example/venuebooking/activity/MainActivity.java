@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Log.d("Main:","onOptionsItemSelected");
-        getSharedPreferences("mobileStore",MODE_PRIVATE).edit().putBoolean("login_status",false).apply();finish();
+        getSharedPreferences("VENUEBOOKING",MODE_PRIVATE).edit().putBoolean("login_status",false).apply();finish();
         return super.onOptionsItemSelected(item);
    }
     }

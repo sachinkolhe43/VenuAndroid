@@ -64,13 +64,13 @@ public class VenueListAdapter extends RecyclerView.Adapter<VenueListAdapter.MyVi
             textdescription = itemView.findViewById(R.id.textdescription);
             textcontact = itemView.findViewById(R.id.textcontact);
             textaddress = itemView.findViewById(R.id.textaddress);
-            
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(context, DetailsActivity.class);
                     intent.putExtra("venue",venueList.get(getAdapterPosition()));
                     context.startActivity(intent);
+                    //return 0;
                 }
             });
         }

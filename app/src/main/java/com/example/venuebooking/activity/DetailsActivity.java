@@ -2,6 +2,8 @@ package com.example.venuebooking.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,16 +16,15 @@ import com.bumptech.glide.Glide;
 import com.example.venuebooking.R;
 import com.example.venuebooking.entity.Venue;
 import com.example.venuebooking.utils.API;
+import com.example.venuebooking.utils.RetrofitClient;
+import com.google.gson.JsonObject;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -64,7 +65,7 @@ public class DetailsActivity extends AppCompatActivity {
         checkBoxPhotography = findViewById(R.id.checkBoxPhotography);
         textTotalAmount = findViewById(R.id.textTotalAmount); // TextView to display total amount
 
-        
+
         // Set service prices (modify this according to your data)
         servicePrices.put("Catering", 1000.0);
         servicePrices.put("Decoration", 500.0);
@@ -139,21 +140,20 @@ public class DetailsActivity extends AppCompatActivity {
         if (checkBoxPhotography.isChecked()) {
             calculatedTotal += getServiceAmount("Photography");
         }
-
-
         double venueBookingPrice = venue.getVenue_amountPerDay();
         double totalPrice = venueBookingPrice + calculatedTotal;
 
         textTotalAmount.setText("Total: Rs." + totalPrice);
     }
-
-
-
-
-
-
-
+    public void book(View view) {
+        int User_id = getSharedPreferences("VENUEBOOKING",MODE_PRIVATE).getInt("Venue_id",0);
+        int Venue_id = venue.getVenue_id();
+        Intent intent = new Intent(DetailsActivity.this, BookingActivity.class);
+        startActivity(intent);
+    }
 }
+
+
 
 
 

@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.venuebooking.fragment.OrderFragment;
+import com.example.venuebooking.fragment.BookingFragment;
 import com.example.venuebooking.fragment.ProfileFragment;
 import com.example.venuebooking.fragment.VenueListFragment;
 
@@ -23,7 +23,7 @@ public class VenueFragmentAdapter extends FragmentStateAdapter {
             case 0:
                 return new VenueListFragment();
             case 1:
-                return new OrderFragment();
+                return new BookingFragment();
             case 2:
                 return new ProfileFragment();
         }

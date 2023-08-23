@@ -74,16 +74,12 @@ public class VenueListFragment extends Fragment {
                     }
                     venueListAdapter.notifyDataSetChanged();
                 }
-
             }
-
             @Override
             public void onFailure(Call<JsonObject> call, Throwable t) {
                 Toast.makeText(getContext(), "Something went wrong", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
-
 }
 

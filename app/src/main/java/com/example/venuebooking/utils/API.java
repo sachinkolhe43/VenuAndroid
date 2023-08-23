@@ -3,8 +3,6 @@ package com.example.venuebooking.utils;
 import com.example.venuebooking.entity.User;
 import com.google.gson.JsonObject;
 
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -22,16 +20,16 @@ public interface API {
     Call<JsonObject> registerUser(@Body User user);
     @GET("/venue/")
    Call<JsonObject> getAllVenues();
-
     @GET("/user/{id}")
     Call<JsonObject> getUserById(@Path("id")int id);
 
-    @GET("/service/{venueId}/service-prices")
-    Call<JsonObject> getVenueServices(@Path("venueId") int venueId);
+//    @GET("/service/{id}")
+//    Call<JsonObject> getServiceById(@Path("Service_id")int Service_id);
 
 
+       @GET("/service/{id}/serviceprices")
+      Call<JsonObject> getVenueServices(@Path("id")int id);
 
-    // Handle failure
 
 //    @GET("/user/{id}")
 //    Call<JsonObject> getUserById(@Path("id")int id);

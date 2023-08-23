@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".fragment.BookingFragment">
+
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textSize="20dp"
+        android:id="@+id/textUser_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name" />
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textSize="20dp"
+        android:id="@+id/textVenue_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VenueName" />
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textSize="20dp"
+        android:id="@+id/textVenuePrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="VenuePrice" />
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textSize="20dp"
+        android:id="@+id/textServicePrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ServicePrice" />
+    <TextView
+    android:layout_marginTop="40dp"
+    android:textSize="20dp"
+    android:id="@+id/textTotalPrice"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="TotalPrice" />
+
+    <Button
+        android:onClick="BookVenue"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BOOK VENUE"></Button>
+</LinearLayout>

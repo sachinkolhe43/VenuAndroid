@@ -20,8 +20,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-
-
     EditText editemail, editpass;
     CheckBox checkBoxRememberMe;
 
@@ -40,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         user.setUser_pass(editpass.getText().toString());
 
         if (checkBoxRememberMe.isChecked())
-            getSharedPreferences("mobileStore", MODE_PRIVATE).edit().putBoolean("login_status", true).apply();
+            getSharedPreferences("VENUEBOOKING", MODE_PRIVATE).edit().putBoolean("login_status", true).apply();
 
         RetrofitClient.getInstance().getApi().loginUser(user).enqueue(new Callback<JsonObject>() {
             @Override
@@ -48,9 +46,9 @@ public class LoginActivity extends AppCompatActivity {
                 JsonArray array = response.body().getAsJsonObject().get("data").getAsJsonArray();
                 if (array.size() != 0) {
                     JsonObject object = array.get(0).getAsJsonObject();
-                    getSharedPreferences("Venuebooking", MODE_PRIVATE).edit()
+                    getSharedPreferences("VENUEBOOKING", MODE_PRIVATE).edit()
                             .putInt("User_id", object.get("User_id").getAsInt()).apply();
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    startActivity(new Intent(LoginActivity.this, DateActivity.class));
                     finish();
                 } else
                     Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
@@ -58,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<JsonObject> call, Throwable t) {
-                Toast.makeText(LoginActivity.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this,"something went wrong", Toast.LENGTH_SHORT    ).show();
             }
         });
     }
