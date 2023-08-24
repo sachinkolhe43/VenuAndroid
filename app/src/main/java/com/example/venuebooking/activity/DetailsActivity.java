@@ -183,7 +183,9 @@ public class DetailsActivity extends AppCompatActivity {
             }
         });
 
-        Intent intent = new Intent(this, BookingActivity.class);
+        Intent intent = new Intent(DetailsActivity.this, BookingActivity.class);
+        intent.putExtra("booking", booking); // Pass the booking object
         startActivity(intent);
+        finish();
     }
 }

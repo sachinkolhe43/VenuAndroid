@@ -9,6 +9,7 @@ import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface API {
 
@@ -44,4 +45,10 @@ public interface API {
 
     @GET("/booking/{id}")
     Call<JsonObject> getUserBookings(@Path("id")int id);
+
+    @GET("/booking-details/{userId}/{venueId}")
+    Call<JsonObject> getBookingDetails(
+            @Path("userId") int userId,
+            @Path("venueId") int venueId
+    );
 }

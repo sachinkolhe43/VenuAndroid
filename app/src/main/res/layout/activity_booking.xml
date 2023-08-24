@@ -21,20 +21,8 @@ tools:context=".activity.BookingActivity">
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="VenueName" />
-<TextView
-    android:layout_marginTop="40dp"
-    android:textSize="20dp"
-    android:id="@+id/textVenuePrice"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="VenuePrice" />
-<TextView
-    android:layout_marginTop="40dp"
-    android:textSize="20dp"
-    android:id="@+id/textServicePrice"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="ServicePrice" />
+
+
 <TextView
     android:layout_marginTop="40dp"
     android:textSize="20dp"
@@ -42,6 +30,24 @@ tools:context=".activity.BookingActivity">
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:text="TotalPrice" />
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textSize="20dp"
+        android:id="@+id/textStartDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TotalPrice" />
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textSize="20dp"
+        android:id="@+id/textEndDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TotalPrice" />
+
+
 
 <Button
     android:onClick="BookVenue"
