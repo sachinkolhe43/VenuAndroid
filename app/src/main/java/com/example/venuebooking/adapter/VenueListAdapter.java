@@ -33,10 +33,7 @@ public class VenueListAdapter extends RecyclerView.Adapter<VenueListAdapter.MyVi
     public VenueListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.venue_list,null);
         return new MyViewHolder(view);
-
-
     }
-
     @Override
     public void onBindViewHolder(@NonNull VenueListAdapter.MyViewHolder holder, int position) {
         Venue venue= venueList.get(position);
@@ -51,9 +48,6 @@ public class VenueListAdapter extends RecyclerView.Adapter<VenueListAdapter.MyVi
     public int getItemCount() {
         return venueList.size();
     }
-
-
-
     class MyViewHolder extends RecyclerView.ViewHolder{
         ImageView image;
         TextView textName,textdescription,textcontact,textaddress;

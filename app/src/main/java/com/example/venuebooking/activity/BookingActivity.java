@@ -17,8 +17,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class BookingActivity extends AppCompatActivity {
-    TextView textUser_name,textVenue_name,textVenuePrice,
-            textServicePrice,textTotalPrice;
+    TextView textUser_name,textVenue_name,textVenuePrice, textServicePrice,textTotalPrice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,5 +28,4 @@ public class BookingActivity extends AppCompatActivity {
         textServicePrice = findViewById(R.id.textServicePrice);
         textTotalPrice = findViewById(R.id.textTotalPrice);
     }
-
 }

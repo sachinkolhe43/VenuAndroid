@@ -17,25 +17,44 @@ import com.example.venuebooking.R;
 
 import java.util.Calendar;
 
+import android.content.SharedPreferences;
+
+
 public class DateActivity extends AppCompatActivity {
-TextView textFdate,textTodate,textTotal;
-ImageView imageCalander1,imageCalender2;
-Button btnNext,btnTotalDays;
-int y1,y2;
-int m1,m2;
-int d1,d2;
+    TextView textFdate,textTodate,textTotal;
+    ImageView imageCalander1,imageCalender2;
+    Button btnNext,btnTotalDays;
+    int y1,y2;
+    int m1,m2;
+    int d1,d2;
+
+    private static final String PREFS_NAME = "DatePrefs";
+    private static final String FROM_DATE_KEY = "Start_date";
+    private static final String TO_DATE_KEY = "End_date";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_date);
+
         textFdate = findViewById(R.id.textFdate);
         imageCalander1 = findViewById(R.id.imageCalander1);
+
         textTodate = findViewById(R.id.textTodate);
         imageCalender2 = findViewById(R.id.imageCalander2);
+
         btnNext = findViewById(R.id.btnNext);
         btnTotalDays = findViewById(R.id.btnTotalDays);
+
         textTotal = findViewById(R.id.textTotal);
         Calendar cal = Calendar.getInstance();
+
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        String savedFromDate = preferences.getString(FROM_DATE_KEY, "");
+        String savedToDate = preferences.getString(TO_DATE_KEY, "");
+
+        textFdate.setText(savedFromDate);
+        textTodate.setText(savedToDate);
+
         btnTotalDays.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +84,13 @@ int d1,d2;
                     long diffDays = diffMillis / (24 * 60 * 60 * 1000);
                     textTotal.setText(String.valueOf(diffDays));
                     Toast.makeText(DateActivity.this, "Difference in days" + diffDays, Toast.LENGTH_SHORT).show();
+
+                    SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString(FROM_DATE_KEY, fromDateText);
+                    editor.putString(TO_DATE_KEY, toDateText);
+                    editor.apply();
+
                 } else {
                     Toast.makeText(DateActivity.this, "Please select both dates" , Toast.LENGTH_SHORT).show();
                    // textTotal.setText(Long.parseLong(diffDays));

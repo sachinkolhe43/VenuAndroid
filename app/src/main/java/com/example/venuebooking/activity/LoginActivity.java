@@ -46,10 +46,19 @@ public class LoginActivity extends AppCompatActivity {
                 JsonArray array = response.body().getAsJsonObject().get("data").getAsJsonArray();
                 if (array.size() != 0) {
                     JsonObject object = array.get(0).getAsJsonObject();
+                    int userId = object.get("User_id").getAsInt();
+
+                    // Change here: Retrieve User_name as a String
+                    String userName = object.get("User_name").getAsString();
+
                     getSharedPreferences("VENUEBOOKING", MODE_PRIVATE).edit()
-                            .putInt("User_id", object.get("User_id").getAsInt()).apply();
+                            .putInt("User_id", userId)
+                            .putString("User_name", userName) // Change here: Save User_name as String
+                            .apply();
+
                     startActivity(new Intent(LoginActivity.this, DateActivity.class));
                     finish();
+
                 } else
                     Toast.makeText(LoginActivity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
             }
