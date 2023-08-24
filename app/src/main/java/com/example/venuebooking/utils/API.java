@@ -42,6 +42,6 @@ public interface API {
     @POST("/booking/bookVenue")
     Call<JsonObject> bookVenue(@Body Booking booking);
 
-    @GET("/orders/{id}")
-    Call<JsonObject> getuserBookings(@Path("id")int id);
+    @GET("/booking/{id}")
+    Call<JsonObject> getUserBookings(@Path("id")int id);
 }
