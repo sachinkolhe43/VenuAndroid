@@ -50,6 +50,10 @@ public class DetailsActivity extends AppCompatActivity {
     private static final String FROM_DATE_KEY = "from_date";
     private static final String TO_DATE_KEY = "to_date";
 
+    private static final String PREFS_VENUE_NAME = "VenuePrefs";
+
+    private static final String SELECTED_VENUE_NAME_KEY = "selected_venue_name";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -148,6 +152,11 @@ public class DetailsActivity extends AppCompatActivity {
         int User_id = getSharedPreferences("VENUEBOOKING",MODE_PRIVATE).getInt("User_id",0);
         int Venue_id = venue.getVenue_id();
 
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFS_VENUE_NAME, MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("SelectedVenueName", venue.getVenue_name()); // Store the selected venue name
+        editor.apply();
 
         Booking booking = new Booking();
         booking.setUser_id(User_id);

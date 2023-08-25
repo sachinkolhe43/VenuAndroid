@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -64,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         Log.d("Main:","onOptionsItemSelected");
         getSharedPreferences("VENUEBOOKING",MODE_PRIVATE).edit().putBoolean("login_status",false).apply();finish();
+        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        finish(); // Close the MainActivity
+
         return super.onOptionsItemSelected(item);
    }
     }
