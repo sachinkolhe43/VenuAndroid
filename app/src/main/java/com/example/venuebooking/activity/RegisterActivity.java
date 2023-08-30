@@ -2,8 +2,10 @@ package com.example.venuebooking.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -19,6 +21,7 @@ import retrofit2.Response;
 public class RegisterActivity extends AppCompatActivity {
     EditText editUser_name,editUser_email,editUser_pass,editConfirmPassword,editUser_contact,editUser_address;
 
+    Button btnCancel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
         editUser_contact = findViewById(R.id.editUser_contact);
         editConfirmPassword = findViewById(R.id.editConfirmPassword);
         editUser_address = findViewById(R.id.editUser_address);
+        btnCancel = findViewById(R.id.btnCancel);
     }
     public void register(View view){
         User users = validateUser();
@@ -73,7 +77,8 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void cancel(View view){
-
+        startActivity(new Intent(this, LoginActivity.class));
+        finish();
     }
 
 }

@@ -166,9 +166,12 @@ public class DetailsActivity extends AppCompatActivity {
         booking.setTotal_amount(Double.parseDouble(totalAmountSplit[1]));
 
 
-        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        String Start_date = preferences.getString(FROM_DATE_KEY, "");
-        String End_date = preferences.getString(TO_DATE_KEY, "");
+//        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+//        String Start_date = preferences.getString(FROM_DATE_KEY, "");
+//        String End_date = preferences.getString(TO_DATE_KEY, "");
+
+        String Start_date = "2023-09-01"; // Replace with your desired start date
+        String End_date = "2023-09-07";
 
         booking.setStart_date(Start_date); // Set the retrieved from date
         booking.setEnd_date(End_date);

@@ -1,42 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-android:padding="16dp"
-tools:context=".fragment.ProfileFragment">
-
-<!-- TODO: Update blank fragment layout -->
-<TextView
-    android:layout_marginTop="20dp"
-    android:textSize="20dp"
-    android:id="@+id/textUser_name"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Name" />
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".fragment.ProfileFragment">
 
-<TextView
-    android:layout_marginTop="20dp"
-    android:textSize="20dp"
-    android:id="@+id/textUser_email"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="email" />
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/user" />
 
     <TextView
         android:layout_marginTop="20dp"
         android:textSize="20dp"
+        android:id="@+id/textUser_name"
+        android:padding="15dp"
+        android:background="@drawable/custom_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:padding="15dp"
+        android:background="@drawable/custom_edittext"
+        android:id="@+id/textUser_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="email" />
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:background="@drawable/custom_edittext"
+        android:padding="15dp"
         android:id="@+id/textUser_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Address" />
 
-<TextView
-    android:layout_marginTop="20dp"
-    android:textSize="20dp"
-    android:id="@+id/textUser_mobile"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="mobile" />
+    <TextView
+        android:layout_marginTop="20dp"
+        android:textSize="20dp"
+        android:background="@drawable/custom_edittext"
+        android:padding="15dp"
+        android:id="@+id/textUser_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="mobile" />
 </LinearLayout>

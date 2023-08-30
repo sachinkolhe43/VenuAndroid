@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:orientation="vertical"
-android:layout_height="match_parent"
-tools:context=".activity.BookingActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".activity.BookingActivity">
 
     <TextView
         android:text="Booking Details"
@@ -15,37 +15,37 @@ tools:context=".activity.BookingActivity">
         android:background="@android:color/holo_green_light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-<TextView
-    android:layout_marginTop="40dp"
-    android:textSize="20dp"
-    android:id="@+id/textUser_name"
-    android:gravity="center"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Name" />
-<TextView
-    android:layout_marginTop="40dp"
-    android:textSize="20dp"
-    android:gravity="center"
-    android:id="@+id/textVenue_id"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Venue ID" />
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textSize="20dp"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:background="@drawable/custom_edittext"
+        android:id="@+id/textUser_name"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name" />
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textSize="20dp"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:background="@drawable/custom_edittext"
+        android:gravity="center"
+        android:id="@+id/textVenue_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Venue ID" />
 
-
-<TextView
-    android:layout_marginTop="40dp"
-    android:textSize="20dp"
-    android:id="@+id/textTotalPrice"
-    android:gravity="center"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="TotalPrice" />
 
     <TextView
         android:layout_marginTop="40dp"
         android:textSize="20dp"
-        android:id="@+id/textStartDate"
+        android:padding="15dp"
+        android:textColor="@color/black"
+        android:background="@drawable/custom_edittext"
+        android:id="@+id/textTotalPrice"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,7 +54,22 @@ tools:context=".activity.BookingActivity">
     <TextView
         android:layout_marginTop="40dp"
         android:textSize="20dp"
+        android:padding="15dp"
+        android:background="@drawable/custom_edittext"
+        android:id="@+id/textStartDate"
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TotalPrice" />
+
+    <TextView
+        android:layout_marginTop="40dp"
+        android:textSize="20dp"
+        android:background="@drawable/custom_edittext"
         android:id="@+id/textEndDate"
+        android:padding="15dp"
+        android:textColor="@color/black"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
