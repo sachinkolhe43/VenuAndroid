@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="8dp"
     android:background="@color/material_dynamic_neutral70"
@@ -8,6 +9,8 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
+        android:backgroundTint="#e6f2ff"
+        app:cardCornerRadius="18dp"
         android:layout_height="wrap_content">
 
         <LinearLayout
@@ -17,6 +20,7 @@
 
             <ImageView
                 android:id="@+id/image"
+                android:layout_marginLeft="20dp"
                 android:src="@drawable/ic_launcher_background"
                 android:layout_width="100dp"
                 android:layout_height="150dp"/>

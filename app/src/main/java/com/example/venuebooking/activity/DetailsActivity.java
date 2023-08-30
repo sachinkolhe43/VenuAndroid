@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.venuebooking.R;
 import com.example.venuebooking.entity.Booking;
+import com.example.venuebooking.entity.DateStorage;
 import com.example.venuebooking.entity.Venue;
 import com.example.venuebooking.utils.API;
 import com.example.venuebooking.utils.RetrofitClient;
@@ -98,9 +99,9 @@ public class DetailsActivity extends AppCompatActivity {
        onTotalPrice(null);
     }
     private void getVenueDetails() {
-        textVenueName.setText("Name : "+venue.getVenue_name());
+        textVenueName.setText(""+venue.getVenue_name());
         txtVenueDescription.setText("Description : "+venue.getVenue_description());
-        textVenueContact.setText("Contact : "+venue.getVenue_contact());
+        textVenueContact.setText("Conatct : "+venue.getVenue_contact());
         textVenueAddress.setText("Address : "+venue.getVenue_address());
         textVenueBookingPrice.setText("Booking Price : "+venue.getVenue_amountPerDay());
         Glide.with(this).load(API.BASE_URL+"/"+venue.getVenue_image()).into(imageView);
@@ -170,8 +171,11 @@ public class DetailsActivity extends AppCompatActivity {
 //        String Start_date = preferences.getString(FROM_DATE_KEY, "");
 //        String End_date = preferences.getString(TO_DATE_KEY, "");
 
-        String Start_date = "2023-09-01"; // Replace with your desired start date
-        String End_date = "2023-09-07";
+        String Start_date = DateStorage.getInstance().getStartDate();
+        String End_date = DateStorage.getInstance().getEndDate();
+
+//        String Start_date = "2023-09-01"; // Replace with your desired start date
+//        String End_date = "2023-09-07";
 
         booking.setStart_date(Start_date); // Set the retrieved from date
         booking.setEnd_date(End_date);

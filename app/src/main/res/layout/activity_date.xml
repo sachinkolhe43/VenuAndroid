@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:backgroundTint="#81B1D8"
+    android:background="#E6EAEE"
     tools:context=".activity.DateActivity">
 <LinearLayout
     android:layout_marginLeft="50dp"
@@ -63,6 +63,7 @@
         <Button
             android:id="@+id/btnTotalDays"
             android:text="Total Days"
+            android:backgroundTint="#0080ff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     <TextView
@@ -82,6 +83,7 @@
         android:layout_marginTop="16dp"
         android:id="@+id/btnNext"
         android:text="Next"
+        android:backgroundTint="#1151af"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></Button>
     </LinearLayout>

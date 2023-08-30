@@ -41,7 +41,7 @@ public class VenueListAdapter extends RecyclerView.Adapter<VenueListAdapter.MyVi
         holder.textdescription.setText(venue.getVenue_description());
         holder.textcontact.setText(""+venue.getVenue_contact());
         holder.textaddress.setText(""+venue.getVenue_address());
-       Glide.with(context).load("http://192.168.1.16:4000/"+venue.getVenue_image()).into(holder.image);
+       Glide.with(context).load("http://192.168.161.86:4000/"+venue.getVenue_image()).into(holder.image);
     }
 
     @Override

@@ -6,19 +6,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+    android:background="@color/material_dynamic_neutral90"
     android:orientation="vertical"
-    android:background="@drawable/images"
     tools:context=".activity.DetailsActivity">
+
     <LinearLayout
         android:id="@+id/venuDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginBottom="30dp"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="337dp"
+            android:layout_width="match_parent"
             android:layout_height="171dp"
             android:src="@drawable/ic_launcher_background" />
 
@@ -27,14 +29,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Venue Name"
-            android:textSize="20dp" />
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="23dp" />
 
         <TextView
             android:id="@+id/textVenueDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Description"
-            android:textSize="20dp" />
+            android:textStyle="bold"
+            android:textSize="17dp" />
 
         <TextView
             android:id="@+id/textVenueContact"
@@ -48,7 +53,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Booking Price"
-            android:layout_marginBottom="10dp"
             android:textSize="20dp" />
 
         <TextView
@@ -76,16 +80,17 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/venuDescription"
         android:layout_marginStart="2dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="-355dp"
         android:orientation="vertical">
+
 
         <CheckBox
             android:id="@+id/checkBoxCatering"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="170dp"
             android:text="Catering" />
 
         <CheckBox
@@ -113,6 +118,16 @@
             android:text="Photography" />
 
         <TextView
+
+            android:text="Add Services"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:background="@android:color/system_accent3_300"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
             android:id="@+id/textTotalAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -121,6 +136,7 @@
             android:layout_marginTop="16dp"
             android:text="Total: Rs.0.00"
             android:textSize="18sp" />
+
 
         <LinearLayout
             android:layout_width="match_parent"

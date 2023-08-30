@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.venuebooking.R;
+import com.example.venuebooking.entity.DateStorage;
 
 import java.util.Calendar;
 
@@ -28,9 +29,9 @@ public class DateActivity extends AppCompatActivity {
     int m1,m2;
     int d1,d2;
 
-    private static final String PREFS_NAME = "DatePrefs";
-    private static final String FROM_DATE_KEY = "Start_date";
-    private static final String TO_DATE_KEY = "End_date";
+//    private static final String PREFS_NAME = "DatePrefs";
+//    private static final String FROM_DATE_KEY = "Start_date";
+//    private static final String TO_DATE_KEY = "End_date";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,12 +49,12 @@ public class DateActivity extends AppCompatActivity {
         textTotal = findViewById(R.id.textTotal);
         Calendar cal = Calendar.getInstance();
 
-        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        String savedFromDate = preferences.getString(FROM_DATE_KEY, "");
-        String savedToDate = preferences.getString(TO_DATE_KEY, "");
+//        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+//        String savedFromDate = preferences.getString(FROM_DATE_KEY, "");
+//        String savedToDate = preferences.getString(TO_DATE_KEY, "");
 
-        textFdate.setText(savedFromDate);
-        textTodate.setText(savedToDate);
+//        textFdate.setText(savedFromDate);
+//        textTodate.setText(savedToDate);
 
         btnTotalDays.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,11 +86,14 @@ public class DateActivity extends AppCompatActivity {
                     textTotal.setText(String.valueOf(diffDays));
                     Toast.makeText(DateActivity.this, "Difference in days" + diffDays, Toast.LENGTH_SHORT).show();
 
-                    SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-                    SharedPreferences.Editor editor = preferences.edit();
-                    editor.putString(FROM_DATE_KEY, fromDateText);
-                    editor.putString(TO_DATE_KEY, toDateText);
-                    editor.apply();
+//                    SharedPreferences preferences = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+//                    SharedPreferences.Editor editor = preferences.edit();
+//                    editor.putString(FROM_DATE_KEY, fromDateText);
+//                    editor.putString(TO_DATE_KEY, toDateText);
+//                    editor.apply();
+
+                    DateStorage.getInstance().setStartDate(fromDateText);
+                    DateStorage.getInstance().setEndDate(toDateText);
 
                 } else {
                     Toast.makeText(DateActivity.this, "Please select both dates" , Toast.LENGTH_SHORT).show();
@@ -134,5 +138,15 @@ public class DateActivity extends AppCompatActivity {
                 dp.show();
             }
         });
+
+        // Set stored dates if available
+        String storedStartDate = DateStorage.getInstance().getStartDate();
+        String storedEndDate = DateStorage.getInstance().getEndDate();
+        if (storedStartDate != null) {
+            textFdate.setText(storedStartDate);
+        }
+        if (storedEndDate != null) {
+            textTodate.setText(storedEndDate);
+        }
     }
 }

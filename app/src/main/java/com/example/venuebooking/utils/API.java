@@ -13,7 +13,7 @@ import retrofit2.http.Query;
 
 public interface API {
 
-    String BASE_URL ="http://192.168.1.16:4000";
+    String BASE_URL ="http://192.168.161.86:4000";
 
     @POST("/user/login")
     Call<JsonObject> loginUser(@Body User user);
